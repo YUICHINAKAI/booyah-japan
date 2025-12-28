@@ -2,127 +2,396 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booyah JAPAN｜まだ世の中にない挑戦を。</title>
-  <meta name="description" content="Booyah JAPANは、営業代行・YouTube運用・SNS運用を軸に、まだ世の中にない挑戦を仕掛けるクリエイティブカンパニーです。">
+  <meta name="description" content="Booyah JAPANは、営業代行・YouTube運用・SNS運用を通じて、まだ世の中にない挑戦を形にする。名刺代わりの1ページ公式サイト。">
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts（本文/見出し/手書き風） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&family=Yomogi&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-      background: #000;
-      color: #fff;
-      line-height: 1.8;
+    :root{
+      --bg:#070A0F;
+      --fg:#EAF0FF;
+      --muted:rgba(234,240,255,.72);
+      --line:rgba(234,240,255,.12);
+      --glass:rgba(255,255,255,.10);
+      --shadow:0 14px 60px rgba(0,0,0,.45);
     }
-    header {
-      padding: 40px 20px;
-      text-align: center;
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(63,94,251,.18), transparent 55%),
+                  radial-gradient(900px 700px at 90% 20%, rgba(252,70,107,.10), transparent 55%),
+                  var(--bg);
+      color:var(--fg);
+      line-height:1.9;
+      letter-spacing:.02em;
     }
-    header img {
-      max-width: 220px;
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+
+    /* 斜体（日本語でも“こだわった斜体”に見せる） */
+    .italic{
+      display:inline-block;
+      transform:skewX(-10deg);
+      letter-spacing:.08em;
     }
-    .hero {
-      position: relative;
-      height: 70vh;
-      overflow: hidden;
+    .italic-strong{
+      display:inline-block;
+      transform:skewX(-12deg);
+      letter-spacing:.12em;
+      font-weight:700;
     }
-    .hero video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+      isolation:isolate;
     }
-    .hero h1 {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      background: rgba(0,0,0,0.45);
-      margin: 0;
-      text-align: center;
+    .hero video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:saturate(0.95) contrast(1.05) brightness(.78);
+      transform:scale(1.02);
+      z-index:-2;
     }
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 20px;
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 600px at 20% 20%, rgba(255,255,255,.10), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.72));
+      z-index:-1;
     }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+
+    .hero-inner{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:90px 0 70px;
     }
-    .profile {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
+
+    .hero-card{
+      width:min(880px,100%);
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      backdrop-filter: blur(10px);
+      box-shadow:var(--shadow);
+      border-radius:22px;
+      padding:42px 28px;
+      text-align:center;
     }
-    .profile img {
-      max-width: 280px;
-      border-radius: 6px;
+
+    .logo-wrap{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 18px;
+      border-radius:16px;
+      background:rgba(255,255,255,.82);
+      box-shadow:0 18px 70px rgba(0,0,0,.35);
+      margin-bottom:22px;
     }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      opacity: 0.7;
+    .logo{
+      width:min(520px,78vw);
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 8px 30px rgba(0,0,0,.25));
     }
-    a {
-      color: #fff;
-      text-decoration: underline;
+
+    .catch{
+      font-family:"Shippori Mincho",serif;
+      font-weight:600;
+      font-size:clamp(26px,4.6vw,52px);
+      letter-spacing:.12em;
+      line-height:1.25;
+      margin-top:10px;
+    }
+    .sub{
+      margin-top:16px;
+      color:rgba(255,255,255,.78);
+      font-size:14px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+
+    /* SECTIONS */
+    section{
+      padding:110px 0;
+    }
+    .section-title{
+      text-align:center;
+      margin-bottom:46px;
+    }
+    .section-title h2{
+      font-family:"Shippori Mincho",serif;
+      font-size:28px;
+      letter-spacing:.18em;
+      font-weight:600;
+    }
+    .section-title p{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+    }
+
+    /* BUSINESS */
+    .business-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border-radius:18px;
+      padding:26px 22px;
+      box-shadow:0 12px 45px rgba(0,0,0,.28);
+    }
+    .card h3{
+      font-size:16px;
+      letter-spacing:.12em;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+    .card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy{
+      text-align:center;
+      border:1px solid rgba(255,255,255,.14);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border-radius:22px;
+      padding:44px 26px;
+      box-shadow:0 18px 70px rgba(0,0,0,.32);
+    }
+    .philosophy .text{
+      font-family:"Yomogi",cursive; /* 手書き風 */
+      font-size:18px;
+      line-height:2.05;
+      white-space:pre-line;
+      letter-spacing:.06em;
+      color:rgba(255,255,255,.92);
+    }
+
+    /* PROFILE */
+    .profile{
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:28px;
+      align-items:center;
+    }
+    .profile img{
+      width:100%;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 22px 90px rgba(0,0,0,.38);
+      filter:contrast(1.05) saturate(.95);
+    }
+    .profile-name{
+      font-family:"Shippori Mincho",serif;
+      font-size:18px;
+      letter-spacing:.14em;
+      margin-bottom:14px;
+    }
+    .profile-note{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* LINKS */
+    .links{
+      display:flex;
+      justify-content:center;
+      gap:26px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .link-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      transition:transform .18s ease, background .18s ease;
+      font-size:13px;
+      letter-spacing:.12em;
+    }
+    .link-btn:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.10);
+    }
+
+    footer{
+      padding:52px 0 44px;
+      color:rgba(234,240,255,.62);
+      font-size:12px;
+      text-align:center;
+      letter-spacing:.08em;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .business-grid{grid-template-columns:1fr}
+      .profile{grid-template-columns:1fr}
+      .hero-card{padding:36px 18px}
+      .logo{width:min(520px,86vw)}
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <img src="logo.png" alt="Booyah JAPAN ロゴ">
-</header>
+  <!-- HERO（動画は俺が選定：後で差し替えOK） -->
+  <section class="hero" aria-label="Hero">
+    <video autoplay muted loop playsinline preload="metadata">
+      <!-- まずは外部URLで表示（安定後に hero.mp4 ローカル化推奨） -->
+      <source src="https://cdn.coverr.co/videos/coverr-working-on-laptop-7273/1080p.mp4" type="video/mp4">
+    </video>
 
-<div class="hero">
-  <video src="hero.mp4" autoplay muted loop playsinline></video>
-  <h1>まだ世の中にない挑戦を。</h1>
-</div>
+    <div class="hero-inner">
+      <div class="wrap">
+        <div class="hero-card">
+          <div class="logo-wrap">
+            <img src="logo.png" alt="Booyah JAPAN Logo" class="logo">
+          </div>
 
-<section>
-  <h2>事業内容</h2>
-  <p>
-    Booyah JAPANは、営業代行・YouTube運用・SNS運用を軸に、<br>
-    個人・企業が持つポテンシャルを最大化する支援を行っています。
-  </p>
-  <p>
-    数字だけを追うのではなく、<br>
-    「想いが届くか」「覚えられるか」「挑戦になっているか」を重視します。
-  </p>
-</section>
-
-<section>
-  <h2>代表プロフィール</h2>
-  <div class="profile">
-    <img src="nakai.jpg" alt="代表 中井裕一">
-    <div>
-      <p><strong>代表：中井 裕一</strong></p>
-      <p>
-        世の中にまだ存在しない挑戦を形にするため、Booyah JAPANを設立。<br>
-        YouTube・SNS・営業の現場で培った経験を武器に、<br>
-        「挑戦する個人」が正当に評価される仕組みづくりを目指している。
-      </p>
+          <div class="catch"><span class="italic-strong">まだ世の中にない挑戦を。</span></div>
+          <div class="sub"><span class="italic">Booyah JAPAN</span> / One-page Official</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2>リンク</h2>
-  <p>
-    Instagram：<br>
-    <a href="https://www.instagram.com/nakaiyuichi/" target="_blank">
-      https://www.instagram.com/nakaiyuichi/
-    </a>
-  </p>
-</section>
+  <div class="divider"></div>
 
-<footer>
-  © Booyah JAPAN
-</footer>
+  <!-- BUSINESS -->
+  <section id="business">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>事業内容</h2>
+        <p><span class="italic">Business</span></p>
+      </div>
+
+      <div class="business-grid">
+        <div class="card">
+          <h3><span class="italic">営業代行</span></h3>
+          <p>（詳細・実績・料金は掲載しない）</p>
+        </div>
+        <div class="card">
+          <h3><span class="italic">YouTube運用</span></h3>
+          <p>（詳細・実績・料金は掲載しない）</p>
+        </div>
+        <div class="card">
+          <h3><span class="italic">SNS運用</span></h3>
+          <p>（詳細・実績・料金は掲載しない）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>理念</h2>
+        <p><span class="italic">Philosophy</span></p>
+      </div>
+
+      <div class="philosophy">
+        <div class="text">
+私は、常に新しいことに挑戦しています。
+
+世の中に無いことを形にするのは、
+正直、とても大変です。
+
+うまくいくこともあれば、
+失敗することもある。
+
+それでも、
+その先に必ず「経験」が残る。
+
+人は、その経験があるから、
+もう一度前に進める。
+
+そんな循環の中に、
+ずっといられる存在でありたい。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROFILE -->
+  <section id="profile">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>代表</h2>
+        <p><span class="italic">Representative</span></p>
+      </div>
+
+      <div class="profile">
+        <img src="nakai.jpg" alt="代表 中井裕一">
+        <div>
+          <div class="profile-name">代表　中井 裕一</div>
+          <div class="profile-note">
+            情報は最小限。思想は最大限。<br>
+            「語らない強さ」を、ここに。
+          </div>
+
+          <div class="links">
+            <a class="link-btn" href="https://www.instagram.com/nakaiyuichi/" target="_blank" rel="noopener">Instagram</a>
+            <a class="link-btn" href="https://m.youtube.com/@wig-nakai/featured" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>お問い合わせ</h2>
+        <p><span class="italic">Contact</span></p>
+      </div>
+
+      <div style="text-align:center;color:rgba(234,240,255,.78);font-size:14px;letter-spacing:.06em;">
+        <a class="italic" href="mailto:booyah.japan@gmail.com">booyah.japan@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © Booyah JAPAN
+  </footer>
 
 </body>
 </html>
