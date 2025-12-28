@@ -5,140 +5,203 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booyah JAPAN｜まだ世の中にない挑戦を。</title>
 
-  <meta name="description" content="Booyah JAPANは、営業代行・YouTube運用・SNS運用を通じて、まだ世の中にない挑戦を形にするクリエイティブカンパニーです。" />
-  <meta name="robots" content="index, follow" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
-                   "Hiragino Sans", Meiryo, sans-serif;
-      background: #111;
-      color: #fff;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #111;
+      background: #fff;
       line-height: 1.8;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 20px;
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 10px;
-      letter-spacing: 0.05em;
-    }
-
-    .catch {
-      font-size: 1.2rem;
-      color: #aaa;
-      margin-bottom: 60px;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      border-left: 4px solid #fff;
-      padding-left: 12px;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #ddd;
-      margin-bottom: 16px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .profile {
-      margin-top: 30px;
-      color: #ccc;
-    }
-
-    .links a {
-      display: inline-block;
-      margin-right: 20px;
-      margin-top: 10px;
-      color: #fff;
+    a {
+      color: inherit;
       text-decoration: none;
-      border-bottom: 1px solid #555;
     }
 
-    .links a:hover {
-      border-bottom: 1px solid #fff;
+    /* ---------- HERO ---------- */
+    .hero {
+      height: 100vh;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    footer {
-      margin-top: 80px;
-      font-size: 0.9rem;
-      color: #777;
+    .hero-content {
+      color: #fff;
       text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    /* ---------- SECTION ---------- */
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    /* ---------- BUSINESS ---------- */
+    .business-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .business-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .business-item p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ---------- PHILOSOPHY ---------- */
+    .philosophy {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 18px;
+      line-height: 2;
+      white-space: pre-line;
+      text-align: center;
+    }
+
+    /* ---------- PROFILE ---------- */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .profile-name {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 18px;
+    }
+
+    /* ---------- SNS ---------- */
+    .sns {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .sns a {
+      font-size: 14px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 4px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 80px 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>Booyah JAPAN</h1>
-      <p class="catch">まだ世の中にない挑戦を。</p>
-    </header>
 
-    <section>
-      <h2>事業内容</h2>
-      <ul>
-        <li>営業代行・営業支援</li>
-        <li>YouTubeチャンネル企画・運用</li>
-        <li>SNSマーケティング・運用支援</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>代表メッセージ</h2>
-      <p>
-        世の中には、まだ形になっていない挑戦が無数にあります。<br />
-        Booyah JAPANは、挑戦する人の想いに寄り添い、<br />
-        ビジネス・コンテンツ・発信という手段を通じて、それを現実に変えていきます。
-      </p>
-      <p>
-        失敗を恐れず、前例に縛られず、<br />
-        「まだ世の中にないもの」を本気で生み出す。<br />
-        それが、私たちの存在意義です。
-      </p>
-
-      <div class="profile">
-        代表　中井 裕一
-      </div>
-    </section>
-
-    <section>
-      <h2>リンク</h2>
-      <div class="links">
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.instagram.com/nakaiyuichi/" target="_blank" rel="noopener">Instagram</a>
-        <a href="mailto:info@booyah-japan.com">お問い合わせ</a>
-      </div>
-    </section>
-
-    <footer>
-      © Booyah JAPAN
-    </footer>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>まだ世の中にない挑戦を。</h1>
+    </div>
   </div>
+
+  <!-- BUSINESS -->
+  <section>
+    <h2 class="section-title">事業内容</h2>
+    <div class="business-list">
+      <div class="business-item">
+        <h3>営業代行</h3>
+        <p>新規開拓から既存フォローまで、成果にこだわる営業支援。</p>
+      </div>
+      <div class="business-item">
+        <h3>YouTube運用</h3>
+        <p>企画・構成・運用まで一貫したYouTubeサポート。</p>
+      </div>
+      <div class="business-item">
+        <h3>SNS運用</h3>
+        <p>ブランド価値を高めるSNS戦略と継続運用。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section>
+    <h2 class="section-title">理念</h2>
+    <div class="philosophy">
+私は、常に新しいことに挑戦しています。
+
+世の中に無いことを形にするのは、
+正直、とても大変です。
+
+うまくいくこともあれば、
+失敗することもある。
+
+それでも、
+その先に必ず「経験」が残る。
+
+人は、その経験があるから、
+もう一度前に進める。
+
+そんな循環の中に、
+ずっといられる存在でありたい。
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section>
+    <div class="profile">
+      <div class="profile-name">代表　中井 裕一</div>
+
+      <div class="sns">
+        <a href="https://www.instagram.com/nakaiyuichi/" target="_blank">Instagram</a>
+        <a href="https://m.youtube.com/@wig-nakai/featured" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>お問い合わせ：booyah.japan@gmail.com</div>
+    <div>© Booyah JAPAN</div>
+  </footer>
+
 </body>
 </html>
